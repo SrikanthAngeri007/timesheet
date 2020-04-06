@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Manage Timesheets</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <style>
+	.card {
+		height: 200px;
+		width: 507px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.row {
+		margin-top: 20px;
+		width:450px;
+	}
+	.btn-container {
+		display: flex;
+    justify-content: flex-end;
+    margin-right: 15px;
+	}
+  </style>
+	
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Manage Timesheet</h1>
+  <p>Please upload ESA and RPM Data Sheets!</p> 
+</div>
+  
+<div class="container">
+  <div class="card">
+  <form action="http://localhost:8080/timesheet/upload" method="post" enctype="multipart/form-data" >
+	<div class="row">
+		<div class="col-4 text-align:left">
+			Choose File :
+		</div>
+		<div class="col-8 text-align:left">
+			<input type="file" name="file" id="id" value="Browse"/>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-4 text-align:left">
+			File Type :
+		</div>
+		<div class="col-8 text-align:left">
+			  <select style="width:100%" class="form-control"  name="type" id="type">
+				<option value="esa">esa</option><option value="rpm">rpm</option>
+			  </select>
+		</div>
+	</div>
+	
+	<div class="row btn-container">	
+		<input type="submit" class="btn btn-primary"></input>
+	</div>
+	</form>
+  </div>
+</div>
+
+</body>
+</html>
